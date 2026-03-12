@@ -5,8 +5,8 @@ import ca.uqam.mgl7460.tp1.types.traitements.definitions.DefinitionTache;
 import ca.uqam.mgl7460.tp1.types.traitements.definitions.DefinitionTransition;
 
 public class DefinitionTransitionImpl implements DefinitionTransition {
-    private DefinitionTache tacheSource;
-    private DefinitionTache tacheDestination;
+    private final DefinitionTache tacheSource;
+    private final DefinitionTache tacheDestination;
     private ConditionTransition conditionTransition;
 
     public DefinitionTransitionImpl(DefinitionTache tacheSource, DefinitionTache tacheDestination) {
