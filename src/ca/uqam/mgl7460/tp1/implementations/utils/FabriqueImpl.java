@@ -4,6 +4,7 @@ import ca.uqam.mgl7460.tp1.implementations.modeles.DemandePretImpl;
 import ca.uqam.mgl7460.tp1.implementations.modeles.DemandeurPretImpl;
 import ca.uqam.mgl7460.tp1.implementations.modeles.ProprieteImpl;
 import ca.uqam.mgl7460.tp1.implementations.modeles.ResultatTraitementImpl;
+import ca.uqam.mgl7460.tp1.implementations.traitements.definitions.DefinitionTacheImpl;
 import ca.uqam.mgl7460.tp1.types.modeles.*;
 import ca.uqam.mgl7460.tp1.types.traitements.definitions.*;
 import ca.uqam.mgl7460.tp1.types.traitements.instances.InstanceProcessus;
@@ -57,12 +58,12 @@ public class FabriqueImpl implements Fabrique {
 
     @Override
     public DefinitionTache creerDefinitionTache(String nom, String description) {
-        return null;
+        return new DefinitionTacheImpl(nom, description);
     }
 
     @Override
     public DefinitionTache creerDefinitionTache(String nom, String description, TraitementTache traitementTache) {
-        return null;
+        return new DefinitionTacheImpl(nom, description, traitementTache);
     }
 
     @Override

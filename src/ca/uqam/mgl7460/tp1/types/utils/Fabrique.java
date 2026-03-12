@@ -1,6 +1,6 @@
 package ca.uqam.mgl7460.tp1.types.utils;
 
-import ca.uqam.mgl7460.tp1.implementations.utils.ConcreteFactory;
+import ca.uqam.mgl7460.tp1.implementations.utils.FabriqueImpl;
 import ca.uqam.mgl7460.tp1.types.modeles.Adresse;
 import ca.uqam.mgl7460.tp1.types.modeles.DemandePret;
 import ca.uqam.mgl7460.tp1.types.modeles.DemandeurPret;
@@ -154,7 +154,7 @@ public interface Fabrique {
      */
     public static Fabrique getSingletonFabrique() {
         Fabrique singleton = null;
-        singleton = ConcreteFactory.getSingleton();
+        singleton = FabriqueImpl.getSingleton();
         return singleton;
     }
 }
