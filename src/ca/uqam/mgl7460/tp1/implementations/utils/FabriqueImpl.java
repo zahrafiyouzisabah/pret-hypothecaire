@@ -5,6 +5,7 @@ import ca.uqam.mgl7460.tp1.implementations.modeles.DemandeurPretImpl;
 import ca.uqam.mgl7460.tp1.implementations.modeles.ProprieteImpl;
 import ca.uqam.mgl7460.tp1.implementations.modeles.ResultatTraitementImpl;
 import ca.uqam.mgl7460.tp1.implementations.traitements.definitions.DefinitionTacheImpl;
+import ca.uqam.mgl7460.tp1.implementations.traitements.definitions.DefinitionTransitionImpl;
 import ca.uqam.mgl7460.tp1.types.modeles.*;
 import ca.uqam.mgl7460.tp1.types.traitements.definitions.*;
 import ca.uqam.mgl7460.tp1.types.traitements.instances.InstanceProcessus;
@@ -68,12 +69,12 @@ public class FabriqueImpl implements Fabrique {
 
     @Override
     public DefinitionTransition creerDefinitionTransition(DefinitionTache tacheSource, DefinitionTache tacheDestination, ConditionTransition conditionTransition) {
-        return null;
+        return new DefinitionTransitionImpl(tacheSource, tacheDestination, conditionTransition);
     }
 
     @Override
     public DefinitionTransition creerDefinitionTransition(DefinitionTache tacheSource, DefinitionTache tacheDestination) {
-        return null;
+        return new DefinitionTransitionImpl(tacheSource, tacheDestination);
     }
 
     @Override
