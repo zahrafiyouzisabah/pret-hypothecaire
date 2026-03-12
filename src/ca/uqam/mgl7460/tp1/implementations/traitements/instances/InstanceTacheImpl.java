@@ -20,6 +20,7 @@ public class InstanceTacheImpl implements InstanceTache {
 
     public InstanceTacheImpl(InstanceProcessus processusEnglobant, DefinitionTache definitionTache) {
         this.processusEnglobant = processusEnglobant;
+        this.demandePret = processusEnglobant.getDemanderPret();
         this.definitionTache = definitionTache;
     }
 
