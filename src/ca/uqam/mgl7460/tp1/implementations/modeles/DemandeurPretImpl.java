@@ -3,9 +3,9 @@ package ca.uqam.mgl7460.tp1.implementations.modeles;
 import ca.uqam.mgl7460.tp1.types.modeles.DemandeurPret;
 
 public class DemandeurPretImpl implements DemandeurPret {
-    private String nom;
-    private String prenom;
-    private String nas;
+    private final String nom;
+    private final String prenom;
+    private final String nas;
 
     private float revenuAnnuel;
     private Integer scoreCredit;
