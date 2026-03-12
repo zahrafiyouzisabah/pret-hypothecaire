@@ -7,6 +7,8 @@ import ca.uqam.mgl7460.tp1.implementations.modeles.ResultatTraitementImpl;
 import ca.uqam.mgl7460.tp1.implementations.traitements.definitions.DefinitionProcessusImpl;
 import ca.uqam.mgl7460.tp1.implementations.traitements.definitions.DefinitionTacheImpl;
 import ca.uqam.mgl7460.tp1.implementations.traitements.definitions.DefinitionTransitionImpl;
+import ca.uqam.mgl7460.tp1.implementations.traitements.instances.InstanceProcessusImpl;
+import ca.uqam.mgl7460.tp1.implementations.traitements.instances.InstanceTacheImpl;
 import ca.uqam.mgl7460.tp1.types.modeles.*;
 import ca.uqam.mgl7460.tp1.types.traitements.definitions.*;
 import ca.uqam.mgl7460.tp1.types.traitements.instances.InstanceProcessus;
@@ -85,11 +87,11 @@ public class FabriqueImpl implements Fabrique {
 
     @Override
     public InstanceProcessus creerInstanceProcessus(DefinitionProcessus definitionProcessus, DemandePret demandePret) {
-        return null;
+        return new InstanceProcessusImpl(definitionProcessus, demandePret);
     }
 
     @Override
     public InstanceTache creerInstanceTache(InstanceProcessus instanceProcessus, DefinitionTache definitionTache) {
-        return null;
+        return new InstanceTacheImpl(instanceProcessus, definitionTache);
     }
 }
