@@ -1,16 +1,20 @@
 package ca.uqam.mgl7460.tp1.implementations.utils;
 
+import ca.uqam.mgl7460.tp1.implementations.modeles.DemandePretImpl;
+import ca.uqam.mgl7460.tp1.implementations.modeles.DemandeurPretImpl;
+import ca.uqam.mgl7460.tp1.implementations.modeles.ProprieteImpl;
+import ca.uqam.mgl7460.tp1.implementations.modeles.ResultatTraitementImpl;
 import ca.uqam.mgl7460.tp1.types.modeles.*;
 import ca.uqam.mgl7460.tp1.types.traitements.definitions.*;
 import ca.uqam.mgl7460.tp1.types.traitements.instances.InstanceProcessus;
 import ca.uqam.mgl7460.tp1.types.traitements.instances.InstanceTache;
 import ca.uqam.mgl7460.tp1.types.utils.Fabrique;
 
-public class ConcreteFactory implements Fabrique {
-    private static final Fabrique instance = new ConcreteFactory();
+public class FabriqueImpl implements Fabrique {
+    private static final Fabrique instance = new FabriqueImpl();
 
     // private constructor to avoid client applications using the constructor
-    private ConcreteFactory(){}
+    private FabriqueImpl(){}
 
     public static Fabrique getSingleton() {
         return instance;
@@ -18,37 +22,37 @@ public class ConcreteFactory implements Fabrique {
 
     @Override
     public Propriete creerPropriete(Adresse adresse) {
-        return null;
+        return new ProprieteImpl(adresse);
     }
 
     @Override
     public Propriete creerPropriete(Adresse adresse, float valeurMarche) {
-        return null;
+        return new ProprieteImpl(adresse, valeurMarche);
     }
 
     @Override
     public DemandeurPret creerDemandeurPret(String prenom, String nom, String NAS) {
-        return null;
+        return new DemandeurPretImpl(prenom, nom, NAS);
     }
 
     @Override
     public DemandeurPret creerDemandeurPret(String prenom, String nom, String NAS, float revenuAnnuel, float obligationsAnnuelles, int scoreCredit) {
-        return null;
+        return new DemandeurPretImpl(prenom, nom, NAS, revenuAnnuel, obligationsAnnuelles, scoreCredit);
     }
 
     @Override
     public DemandePret creerDemandePret(Propriete propriete, DemandeurPret demandeurPret) {
-        return null;
+        return new DemandePretImpl(propriete, demandeurPret);
     }
 
     @Override
     public DemandePret creerDemandePret(Propriete propriete, DemandeurPret demandeurPret, float prixAchat, float miseDeFonds) {
-        return null;
+        return new DemandePretImpl(propriete, demandeurPret, prixAchat, miseDeFonds);
     }
 
     @Override
     public ResultatTraitement creerResultatTraitement(Resultat resultat) {
-        return null;
+        return new ResultatTraitementImpl(resultat);
     }
 
     @Override
