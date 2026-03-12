@@ -62,7 +62,7 @@ public class DemandePretImpl implements DemandePret {
     //Question: Should be a property or calculated based on other fields??
     @Override
     public float getMontantPret() {
-        return 0;
+        return this.prixAchat - this.montantMiseDeFonds;
     }
 
     @Override
