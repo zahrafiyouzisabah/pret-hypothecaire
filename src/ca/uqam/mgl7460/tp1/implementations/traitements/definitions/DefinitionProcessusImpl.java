@@ -57,7 +57,9 @@ public class DefinitionProcessusImpl implements DefinitionProcessus {
         ConditionTransition conditionTransition = (conditions != null && conditions.length > 0)
                 ? conditions[0]
                 : (tache, demandePret) -> true;
-        return new DefinitionTransitionImpl(tacheSource, tacheDestination, conditionTransition);
+        DefinitionTransition transition = new DefinitionTransitionImpl(tacheSource, tacheDestination, conditionTransition);
+        this.ajouteTransition(transition);
+        return transition;
     }
 
     @Override
