@@ -136,11 +136,10 @@ public class InstanceProcessusImpl implements InstanceProcessus {
 
         if (!outgoingTransitions.hasNext()){
             this.setTempsArret(Instant.now());
-            this.setTacheCourante(null);
             this.setEtatProcessus(new EtatProcessus(null, EtatTraitement.TERMINE));
         }else {
             DefinitionTransition nextTransition = outgoingTransitions.next();
-            if (outgoingTransitions.hasNext()) throw new ExceptionDefinitionProcessus(this, Collections.singletonList(instanceTache.getDefinitionTache()), "La tâche signalant la fin a plus d'une transition sortante");
+            if (outgoingTransitions.hasNext()) throw new ExceptionDefinitionProcessus(this, Collections.singletonList(instanceTache.getDefinitionTache()), "La tâche "+ instanceTache.getDefinitionTache().getNom() +" signalant la fin a plus d'une transition sortante");
             InstanceTache prochaineInstanceTache = Fabrique.getSingletonFabrique().creerInstanceTache(this, nextTransition.getTacheDestination());
             this.ajouterEtLancerTache(prochaineInstanceTache);
         }
