@@ -109,7 +109,7 @@ public class TestCreationDefinitionProcessus {
             transitionsSortantes.next();
             numberTransitionsSortantes++;
         }
-        assertEquals(2,numberTransitionsSortantes, "Je m'attendais à 2 transitions sortantes de"+definitionTache_1.getNom());
+        assertEquals(2,numberTransitionsSortantes, "Je m'attendais à 2 transitions sortantes de"+definitionTache_1.getNom() + " et j'en trouve " + numberTransitionsSortantes);
 
         // 6.   Vérifier que definitionTache_2 et definitionTache_3 sont terminales
         assertTrue(coquille.isTacheFinale(definitionTache_2), "oops! tache "+ definitionTache_2.getNom() + " est supposée être finale.");

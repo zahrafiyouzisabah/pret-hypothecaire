@@ -3,6 +3,7 @@ package ca.uqam.mgl7460.tp1.implementations.traitements.instances;
 import ca.uqam.mgl7460.tp1.implementations.modeles.ResultatTraitementImpl;
 import ca.uqam.mgl7460.tp1.types.modeles.DemandePret;
 import ca.uqam.mgl7460.tp1.types.modeles.Resultat;
+import ca.uqam.mgl7460.tp1.types.modeles.ResultatTraitement;
 import ca.uqam.mgl7460.tp1.types.traitements.definitions.DefinitionTache;
 import ca.uqam.mgl7460.tp1.types.traitements.definitions.TraitementTache;
 import ca.uqam.mgl7460.tp1.types.traitements.instances.EtatTraitement;
@@ -77,9 +78,19 @@ public class InstanceTacheImpl implements InstanceTache {
         }
         boolean resultat = traitementTache.traiteDemandePret(this.getDemandePret(), this.getProcessusEnglobant().getLogger());
 
-        this.demandePret.setResultatTraitement(
-                new ResultatTraitementImpl(resultat ? Resultat.ACCEPTEE : Resultat.REFUSEE)
-        );
+        ResultatTraitement resultatTraitement = this.demandePret.getResultatTraitement();
+
+        if (resultatTraitement == null) {
+            resultatTraitement = new ResultatTraitementImpl(resultat ? Resultat.ACCEPTEE : Resultat.REFUSEE);
+            this.demandePret.setResultatTraitement(resultatTraitement);
+        }
+
+        if (!resultat) {
+            resultatTraitement.ajouteMessage("La tâche " + this.getDefinitionTache().getNom() + " a échoué");
+            resultatTraitement.setResultat(Resultat.REFUSEE);
+        }
+
+        this.demandePret.getResultatTraitement();
         this.setEtatInstanceTache(EtatTraitement.TERMINE);
         this.getProcessusEnglobant().signalerFinTache(this);
     }
