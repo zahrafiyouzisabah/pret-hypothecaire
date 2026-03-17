@@ -12,14 +12,6 @@ class InstanceTache:
 
     
     @property
-    def definition_tache(self):
-        return self._definition_tache
-    
-    @property
-    def processus_englobant(self):
-        return self._processus_englobant
-    
-    @property
     def demande_pret(self):
         return self._demande_pret
     @demande_pret.setter

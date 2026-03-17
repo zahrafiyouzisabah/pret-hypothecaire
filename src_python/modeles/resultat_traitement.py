@@ -1,4 +1,4 @@
-from resultat import Resultat
+from modeles.resultat import Resultat
 
 class ResultatTraitement:
     def __init__(self, resultat: Resultat):

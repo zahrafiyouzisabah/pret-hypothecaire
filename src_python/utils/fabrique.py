@@ -47,7 +47,7 @@ def creer_definition_processus(nom: str, description: str) -> DefinitionProcessu
     return DefinitionProcessus(nom=nom, description=description)
 
 def creer_instance_processus(definition_processus: DefinitionProcessus, demandePret: DemandePret) -> InstanceProcessus:
-    return InstanceProcessus(definition_processus = definition_processus, demandePret = demandePret)
+    return InstanceProcessus(definition_processus = definition_processus, demande_pret= demandePret)
 
 def creer_instance_tache(processus_englobant: InstanceProcessus, definition_tache: DefinitionTache) -> InstanceTache:
     return InstanceTache(definition_tache=definition_tache, processus_englobant=processus_englobant)

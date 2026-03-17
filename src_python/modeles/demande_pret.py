@@ -20,21 +20,6 @@ class DemandePret:
         self.numero_demande = str(uuid.uuid4())
         self.date_demande = datetime.now()
 
-    @property
-    def numero_demande(self):
-        return self._numero_demande
-
-    @property
-    def date_demande(self):
-        return self._date_demande
-
-    @property
-    def demandeur_pret(self):
-        return self._demandeur_pret
-
-    @property
-    def propriete(self):
-        return self._propriete
     
     @property
     def prix_achat(self):
@@ -74,7 +59,7 @@ class DemandePret:
 
     @property
     def ratio_emprunt_valeur(self):
-        valeur = self._propriete.get_valeur_de_marche()
+        valeur = self.propriete.valeur_de_marche
         if valeur == 0:
             return 0
         return self.montant_pret / valeur

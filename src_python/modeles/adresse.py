@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from province_ou_territoire import ProvinceOuTerritoire
+from modeles.province_ou_territoire import ProvinceOuTerritoire
 
 
 @dataclass

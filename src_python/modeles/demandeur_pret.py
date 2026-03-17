@@ -8,18 +8,7 @@ class DemandeurPret:
         self.revenuAnnuel = revenuAnnuel
         self.obligationsAnnuelles = obligationsAnnuelles
         self.scoreCredit = scoreCredit
-    
-    @property
-    def nom(self):
-        return self.nom
-    
-    @property 
-    def prenom(self):
-        return self.prenom
-    
-    @property
-    def nas(self):
-        return self.nas
+
     
     @property
     def revenuAnnuel(self):

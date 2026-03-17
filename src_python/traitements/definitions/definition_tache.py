@@ -6,9 +6,6 @@ class DefinitionTache:
         self.description = description
         self.traitementTache = traitementTache
     
-    @property
-    def nom(self):
-        return self._nom   
     
     @property
     def description(self):

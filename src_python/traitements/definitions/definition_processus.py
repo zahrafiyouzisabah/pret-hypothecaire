@@ -1,6 +1,7 @@
 
 from traitements.definitions.definition_tache import DefinitionTache
 from traitements.definitions.definition_transition import DefinitionTransition
+from utils import fabrique
 
 class DefinitionProcessus:
     def __init__(self, nom: str, description: str):
@@ -10,10 +11,6 @@ class DefinitionProcessus:
         self.premiere_tache  = None
         self.taches = []
         self.transitions = []
-
-    @property
-    def nom(self):  
-        return self._nom   
          
     @property
     def description(self):
@@ -22,10 +19,6 @@ class DefinitionProcessus:
     def description(self, value):   
         self._description = value   
 
-    @property
-    def taches(self):
-        return self._taches
-    
     @property
     def premiere_tache(self):
         return self._premiere_tache
@@ -38,7 +31,7 @@ class DefinitionProcessus:
         self.ajouter_tache(tache)
         
     def ajouter_tache(self, tache: DefinitionTache):
-        self._taches.append(tache)
+        self.taches.append(tache)
         
 
     def ajoute_transition(self, tache_source=None, tache_destination=None, *conditions, definition_transition=None):
@@ -58,7 +51,7 @@ class DefinitionProcessus:
 
         # Case 2: create a new DefinitionTransition
         condition_transition = conditions[0] if conditions else (lambda t, d: True)
-        transition = DefinitionTransition(tache_source, tache_destination, condition_transition)
+        transition = fabrique.creer_definition_transition(tache_source=tache_source, tache_destination=tache_destination, condition_transition=condition_transition)
 
         self.transitions.append(transition)
         return transition

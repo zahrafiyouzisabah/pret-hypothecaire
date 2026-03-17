@@ -20,13 +20,6 @@ class InstanceProcessus:
         self.temps_arret = None
         self.logger = None
         
-    @property
-    def definition_processus(self):
-        return self._definition_processus
-    
-    @property
-    def demande_pret(self):
-        return self._demande_pret
     
     @property
     def etat_processus(self):
@@ -76,7 +69,7 @@ class InstanceProcessus:
         if (instance_tache != self.tache_courante):
             raise ExceptionDefinitionProcessus(self, [], "La tâche signalée comme terminée n'est pas la tâche courante.")
         
-        if (instance_tache.etat_traitement != EtatTraitement.TERMINE):
+        if (instance_tache.etat_instance_tache != EtatTraitement.TERMINE):
             raise ExceptionDefinitionProcessus(self, [], "La tâche signalée comme terminée n'est pas dans un état terminé.")
         
         transitions_sortantes = self.definition_processus.get_trasitions_sortant_de(instance_tache.definition_tache)
