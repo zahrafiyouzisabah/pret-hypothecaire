@@ -85,8 +85,8 @@ public class InstanceProcessusImpl implements InstanceProcessus {
         this.setEtatProcessus(new EtatProcessus(tache, EtatTraitement.PRET));
         this.taches.add(tache);
         this.setTacheCourante(tache);
-        tache.executer();
         this.setEtatProcessus(new EtatProcessus(tache, EtatTraitement.ENCOURS));
+        tache.executer();
     }
 
     @Override
