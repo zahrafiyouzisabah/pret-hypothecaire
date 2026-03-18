@@ -2,6 +2,7 @@ from modeles.demande_pret import DemandePret
 from modeles.resultat import Resultat
 from traitements.instances.etat_traitement import EtatTraitement
 from traitements.instances.exception_definition_processus import ExceptionDefinitionProcessus
+from utils import fabrique
 
 class InstanceTache:
     def __init__(self, processus_englobant, definition_tache):
@@ -31,12 +32,13 @@ class InstanceTache:
             raise ExceptionDefinitionProcessus(self.processus_englobant, [self.definition_tache], "La tache n'a pas de traitement.")
         else:
             resultat = traitement_tache(self.demande_pret, self.processus_englobant.logger)
-            resultat_traitement = self.demande_pret.resultat_traitement
 
-            if (resultat_traitement is None):
-                self.demande_pret.resultat_traitement = Resultat.ACCEPTEE if resultat else Resultat.REFUSEE
+            if (self.demande_pret.resultat_traitement is None):
+                self.demande_pret.resultat_traitement = fabrique.creer_resultat_traitement(Resultat.ACCEPTEE if resultat else Resultat.REFUSEE)
+                
 
             if resultat == False:
+                resultat_traitement = self.demande_pret.resultat_traitement
                 resultat_traitement.ajouter_message(f"La tache {self.definition_tache.nom} a échoué.")
                 resultat_traitement.resultat = Resultat.REFUSEE
             
