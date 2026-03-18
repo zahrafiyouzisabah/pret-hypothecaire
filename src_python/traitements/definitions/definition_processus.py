@@ -1,4 +1,5 @@
 
+from traitements.definitions import definition_transition
 from traitements.definitions.definition_tache import DefinitionTache
 from traitements.definitions.definition_transition import DefinitionTransition
 from utils import fabrique
@@ -32,7 +33,6 @@ class DefinitionProcessus:
         
     def ajouter_tache(self, tache: DefinitionTache):
         self.taches.append(tache)
-        
 
     def ajoute_transition(self, tache_source=None, tache_destination=None, *conditions, definition_transition=None):
         """
@@ -44,7 +44,7 @@ class DefinitionProcessus:
         if definition_transition:
             # Case 1: add existing transition
             self.transitions.append(definition_transition)
-            return
+            return definition_transition
 
         if tache_source is None or tache_destination is None:
             raise ValueError("Either pass a definition_transition or both tache_source and tache_destination")
