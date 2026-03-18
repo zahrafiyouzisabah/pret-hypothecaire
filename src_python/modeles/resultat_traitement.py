@@ -5,16 +5,13 @@ class ResultatTraitement:
         self.resultat = resultat
         self.messages = []
 
-@property
-def resultat(self):
-    return self._resultat
-@resultat.setter
-def resultat(self, value: Resultat):
-    self._resultat = value
+    @property
+    def resultat(self):
+        return self._resultat
+    @resultat.setter
+    def resultat(self, value: Resultat):
+        self._resultat = value
 
-@property
-def messages(self):
-    return self._messages
 
-def ajouter_message(self, message: str):
-    self._messages.append(message)
+    def ajouter_message(self, message: str):
+        self.messages.append(message)
