@@ -88,9 +88,9 @@ class InstanceProcessus:
     def ajouter_et_lancer_tache(self, instanceTache: InstanceTache):
         self.etat_processus = EtatProcessus(instanceTache, EtatTraitement.PRET)
         self.taches.append(instanceTache)
-        self.tache_courante = instanceTache
-        instanceTache.executer()
+        self.tache_courante = instanceTache 
         self.etat_processus = EtatProcessus(instanceTache, EtatTraitement.ENCOURS)
+        instanceTache.executer()
         
 
 
