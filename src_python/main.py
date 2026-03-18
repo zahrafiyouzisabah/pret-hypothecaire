@@ -8,7 +8,6 @@ import logging
 import traceback
 
 def main():
-    print("Main!!!!")
     logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
     # 1 Création de définition de processus
@@ -23,11 +22,8 @@ def main():
     linear_process_instance.logger = logger
 
     try:
-        print("Entered in try!!")
         # 4 Démarrage du processus
         linear_process_instance.demarrer()
-        print("After demarrage: ",linear_process_instance.tache_courante.definition_tache.nom, " The other tache: ", tache_eligibilite_pret().nom)
-        print ("Etat trraitement: ", linear_process_instance.etat_processus.etatTraitement)
         if (linear_process_instance.tache_courante.definition_tache.nom == tache_eligibilite_pret().nom):
             logger.info("Cool, je me suis rendu jusqu'à la fin")
         if (linear_process_instance.etat_processus.etatTraitement == EtatTraitement.TERMINE):
