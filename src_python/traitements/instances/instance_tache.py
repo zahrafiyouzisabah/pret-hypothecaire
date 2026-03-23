@@ -44,4 +44,3 @@ class InstanceTache:
             
             self.etat_instance_tache = EtatTraitement.TERMINE
             self.processus_englobant.signaler_fin_tache(self)
-            
