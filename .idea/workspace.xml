@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1c241359-8f91-4c64-966e-9859f77ed04c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EnonceTp1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/implementations/modeles/DemandePretImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/implementations/modeles/DemandeurPretImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/implementations/modeles/ProprieteImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/implementations/modeles/ResultatTraitementImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/implementations/traitements/definitions/DefinitionProcessusImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/implementations/traitements/definitions/DefinitionTacheImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/implementations/traitements/definitions/DefinitionTransitionImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/implementations/traitements/instances/InstanceProcessusImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/implementations/traitements/instances/InstanceTacheImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/implementations/utils/FabriqueImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/tests/CreationDefinitionsProcessus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/tests/CreationDefinitionsTaches.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/tests/CreationDemandesPret.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/tests/MainClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/tests/TestCreationDefinitionProcessus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/tests/TestCreationInstanceProcessus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/modeles/Adresse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/modeles/DemandePret.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/modeles/DemandeurPret.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/modeles/Propriete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/modeles/ProvinceOuTerritoire.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/modeles/Resultat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/modeles/ResultatTraitement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/modeles/TermesPret.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/traitements/definitions/ConditionTransition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/traitements/definitions/DefinitionProcessus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/traitements/definitions/DefinitionTache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/traitements/definitions/DefinitionTransition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/traitements/definitions/TraitementTache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/traitements/instances/EtatProcessus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/traitements/instances/EtatTraitement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/traitements/instances/ExceptionDefinitionProcessus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/traitements/instances/InstanceProcessus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/traitements/instances/InstanceTache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/uqam/mgl7460/tp1/types/utils/Fabrique.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/modeles/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/modeles/adresse.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/modeles/demande_pret.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/modeles/demandeur_pret.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/modeles/propriete.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/modeles/province_ou_territoire.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/modeles/resultat.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/modeles/resultat_traitement.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/modeles/termes_pret.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/tests/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/tests/creation_definitions_processus.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/tests/creation_definitions_taches.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/tests/creation_demandes_pret.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/tests/test_creation_definitions_processus.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/tests/test_creation_instance_processus.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/traitements/definitions/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/traitements/definitions/condition_transition.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/traitements/definitions/definition_processus.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/traitements/definitions/definition_tache.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/traitements/definitions/definition_transition.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/traitements/definitions/traitement_tache.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/traitements/instances/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/traitements/instances/etat_processus.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/traitements/instances/etat_traitement.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/traitements/instances/exception_definition_processus.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/traitements/instances/instance_processus.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/traitements/instances/instance_tache.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_python/utils/fabrique.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Users/zahra/OneDrive/uqam/uqam_project/EnonceTp1/EnonceTp1" value="3BM1IV6C0EyRLcJQ9Ure8Te9BCk" />
+    </persistenceIdMap>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="110" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="3BM1IV6C0EyRLcJQ9Ure8Te9BCk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "v2",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.31033.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1c241359-8f91-4c64-966e-9859f77ed04c" name="Changes" comment="" />
+      <created>1774284047750</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1774284047750</updated>
+      <workItem from="1774284050817" duration="36000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

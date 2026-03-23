@@ -1,0 +1,32 @@
+package ca.uqam.mgl7460.tp1.drools;
+
+unit PretsHypothecairesRuleUnitData;
+
+import ca.uqam.mgl7460.tp1.types.modeles.DemandeurPret;
+import ca.uqam.mgl7460.tp1.types.modeles.DemandePret;
+import ca.uqam.mgl7460.tp1.types.modeles.Resultat;
+import ca.uqam.mgl7460.tp1.drools.UtilitaireRegles;
+
+rule "La règle Éligibilité Emprunteur SALAIRE"
+    when
+        demande : DemandePret (demandeurPret.revenuAnnuel < UtilitaireRegles.SALAIRE_MINIMAL)
+    then
+        demande.getResultatTraitement().setResultat(Resultat.REFUSEE);
+        demande.getResultatTraitement().ajouteMessage(UtilitaireRegles.SALAIRE_TROP_FAIBLE);
+end;
+
+rule "La règle Éligibilité Emprunteur SCORE CREDIT"
+    when
+        demande : DemandePret (demandeurPret.scoreCredit < UtilitaireRegles.SCORE_CREDIT_MINIMAL)
+    then
+        demande.getResultatTraitement().setResultat(Resultat.REFUSEE);
+        demande.getResultatTraitement().ajouteMessage(UtilitaireRegles.SCORE_CREDIT_TROP_FAIBLE);
+end;
+
+rule "La règle Éligibilité Emprunteur SEUIL TAUX ENDETTEMENT"
+    when
+        demande : DemandePret (demandeurPret.tauxEndettement > UtilitaireRegles.SEUIL_TAUX_ENDETTEMENT)
+    then
+        demande.getResultatTraitement().setResultat(Resultat.REFUSEE);
+        demande.getResultatTraitement().ajouteMessage(UtilitaireRegles.TAUX_ENDETTEMENT_TROP_ELEVE);
+end;

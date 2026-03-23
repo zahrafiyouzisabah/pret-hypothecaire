@@ -1,0 +1,116 @@
+package ca.uqam.mgl7460.tp1.implementations.utils;
+
+import ca.uqam.mgl7460.tp1.implementations.modeles.DemandePretImpl;
+import ca.uqam.mgl7460.tp1.implementations.modeles.DemandeurPretImpl;
+import ca.uqam.mgl7460.tp1.implementations.modeles.ProprieteImpl;
+import ca.uqam.mgl7460.tp1.implementations.modeles.ResultatTraitementImpl;
+import ca.uqam.mgl7460.tp1.implementations.traitements.definitions.DefinitionTransitionImpl;
+import ca.uqam.mgl7460.tp1.implementations.traitements.instances.InstanceProcessusImpl;
+import ca.uqam.mgl7460.tp1.implementations.traitements.instances.InstanceTacheImpl;
+import ca.uqam.mgl7460.tp1.implementations.traitements.definitions.DefinitionProcessusImpl;
+import ca.uqam.mgl7460.tp1.implementations.traitements.definitions.DefinitionTacheImpl;
+import ca.uqam.mgl7460.tp1.types.modeles.Adresse;
+import ca.uqam.mgl7460.tp1.types.modeles.DemandePret;
+import ca.uqam.mgl7460.tp1.types.modeles.DemandeurPret;
+import ca.uqam.mgl7460.tp1.types.modeles.Propriete;
+import ca.uqam.mgl7460.tp1.types.modeles.Resultat;
+import ca.uqam.mgl7460.tp1.types.modeles.ResultatTraitement;
+import ca.uqam.mgl7460.tp1.types.traitements.definitions.ConditionTransition;
+import ca.uqam.mgl7460.tp1.types.traitements.definitions.DefinitionProcessus;
+import ca.uqam.mgl7460.tp1.types.traitements.definitions.DefinitionTache;
+import ca.uqam.mgl7460.tp1.types.traitements.definitions.DefinitionTransition;
+import ca.uqam.mgl7460.tp1.types.traitements.definitions.TraitementTache;
+import ca.uqam.mgl7460.tp1.types.traitements.instances.EtatTraitement;
+import ca.uqam.mgl7460.tp1.types.traitements.instances.InstanceProcessus;
+import ca.uqam.mgl7460.tp1.types.traitements.instances.InstanceTache;
+import ca.uqam.mgl7460.tp1.types.utils.Fabrique;
+
+public class FabriqueImpl implements Fabrique {
+
+    private static Fabrique singleton = null;
+
+    public static Fabrique getSingleton() {
+        if (singleton == null) singleton = new FabriqueImpl();
+        return singleton;
+    }
+
+    @Override
+    public Propriete creerPropriete(Adresse adresse) {
+        return new ProprieteImpl(adresse);
+    }
+
+    @Override
+    public Propriete creerPropriete(Adresse adresse, float valeurMarche) {
+       return new ProprieteImpl(adresse, valeurMarche);
+    }
+
+    @Override
+    public DemandeurPret creerDemandeurPret(String prenom, String nom, String nas) {
+        return new DemandeurPretImpl(prenom, nom, nas);
+    }
+
+    @Override
+    public DemandeurPret creerDemandeurPret(String prenom, String nom, String nas, float revenuAnnuel,
+            float obligationsAnnuelles, int scoreCredit) {
+        DemandeurPret demandeur =  new DemandeurPretImpl(prenom, nom, nas);
+        demandeur.setRevenuAnnuel(revenuAnnuel);
+        demandeur.setObligationsAnnuelles(obligationsAnnuelles);
+        demandeur.setScoreCredit(scoreCredit);
+        return demandeur;
+    }
+
+    @Override
+    public DemandePret creerDemandePret(Propriete propriete, DemandeurPret demandeurPret) {
+        return new DemandePretImpl(demandeurPret, propriete);
+    }
+
+    @Override
+    public DemandePret creerDemandePret(Propriete propriete, DemandeurPret demandeurPret, float prixAchat,
+            float miseDeFonds) {
+        return new DemandePretImpl(demandeurPret, propriete,prixAchat, miseDeFonds);
+    }
+
+    @Override
+    public ResultatTraitement creerResultatTraitement(Resultat resultat) {
+        return new ResultatTraitementImpl(resultat);
+    }
+
+    @Override
+    public DefinitionTransition creerDefinitionTransition(DefinitionTache tacheSource, DefinitionTache tacheDestination,
+            ConditionTransition conditionTransition) {
+        return new DefinitionTransitionImpl(tacheSource,tacheDestination,conditionTransition);
+    }
+
+    @Override
+    public DefinitionTransition creerDefinitionTransition(DefinitionTache tacheSource,
+            DefinitionTache tacheDestination) {
+        ConditionTransition conditionTransition = (InstanceTache tache, DemandePret demande)-> true;
+        return creerDefinitionTransition(tacheSource, tacheDestination,conditionTransition);
+    }    
+
+    @Override
+    public DefinitionTache creerDefinitionTache(String nom, String description) {
+        return new DefinitionTacheImpl(nom,description);
+    }
+
+    @Override
+    public DefinitionTache creerDefinitionTache(String nom, String description, TraitementTache traitementTache) {
+        return new DefinitionTacheImpl(nom, description, traitementTache);
+    }
+
+    @Override
+    public DefinitionProcessus creerDefinitionProcessus(String nomProcessus, String descriptionProcessus) {
+        return new DefinitionProcessusImpl(nomProcessus, descriptionProcessus);
+    }
+
+    @Override
+    public InstanceProcessus creerInstanceProcessus(DefinitionProcessus definitionProcessus, DemandePret demandePret) {
+        return new InstanceProcessusImpl(definitionProcessus, demandePret);
+    }
+
+    @Override
+    public InstanceTache creerInstanceTache(InstanceProcessus instanceProcessus, DefinitionTache definitionTache) {
+        return new InstanceTacheImpl(definitionTache,instanceProcessus);
+    }
+
+}

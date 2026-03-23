@@ -1,0 +1,18 @@
+package ca.uqam.mgl7460.tp1.drools;
+
+unit PretsHypothecairesRuleUnitData;
+
+import ca.uqam.mgl7460.tp1.types.modeles.Propriete;
+import ca.uqam.mgl7460.tp1.types.modeles.ProvinceOuTerritoire;
+import ca.uqam.mgl7460.tp1.types.modeles.Resultat;
+import ca.uqam.mgl7460.tp1.types.modeles.DemandePret;
+import ca.uqam.mgl7460.tp1.types.modeles.ResultatTraitement;
+
+rule "La règle Éligibilité Propriété"
+
+    when
+        demande : DemandePret (propriete.adresse.province != ProvinceOuTerritoire.QUEBEC)
+    then
+        demande.getResultatTraitement().setResultat(Resultat.REFUSEE);
+        demande.getResultatTraitement().ajouteMessage(UtilitaireRegles.PROPRIETE_HORS_QUEBEC);
+end;

@@ -1,0 +1,24 @@
+package ca.uqam.mgl7460.tp1.drools;
+
+unit PretsHypothecairesRuleUnitData;
+
+import ca.uqam.mgl7460.tp1.types.modeles.Propriete;
+import ca.uqam.mgl7460.tp1.types.modeles.Resultat;
+import ca.uqam.mgl7460.tp1.types.modeles.DemandePret;
+import ca.uqam.mgl7460.tp1.drools.UtilitaireRegles;
+
+rule "La règle Éligibilité Pret RATIO EMPRUNT VALEUR"
+    when
+        demande : DemandePret ( (montantPret / propriete.valeurDeMarche) > UtilitaireRegles.MAX_RATIO_EMPRUNT_VALEUR)
+    then
+        demande.getResultatTraitement().setResultat(Resultat.REFUSEE);
+        demande.getResultatTraitement().ajouteMessage(UtilitaireRegles.RATIO_EMPRUNT_VALEUR_TROP_ELEVE);
+end;
+
+rule "La règle Éligibilité Pret POURCENTAGE MISE FONDS"
+    when
+        demande : DemandePret ((montantMiseDeFonds / montantPret) < UtilitaireRegles.MIN_POURCENTAGE_MISE_FONDS)
+    then
+        demande.getResultatTraitement().setResultat(Resultat.REFUSEE);
+        demande.getResultatTraitement().ajouteMessage(UtilitaireRegles.TAUX_MISE_FONDS_TROP_FAIBLE);
+end;
